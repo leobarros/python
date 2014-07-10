@@ -5,6 +5,7 @@ import commands
 import subprocess
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 def blacklist(inicio, fim):
   for ip in range(inicio, fim):
     comando = 'host ' + str(ip) + '.32.73.187.bl.spamcop.net'
@@ -22,6 +23,8 @@ blacklist(ini, fim)
 
 
 =======
+=======
+>>>>>>> 1c80d82... Criando um modulo da função blacklist
 for ip in range(129, 256):
 
     comando = 'host ' + str(ip) + '.32.73.187.bl.spamcop.net'
@@ -31,5 +34,8 @@ for ip in range(129, 256):
         if '127.0.0.2' in i:
             print "Bloqueado: 187.73.32."+str(ip)
             
+<<<<<<< HEAD
+>>>>>>> 1c80d82... Criando um modulo da função blacklist
+=======
 >>>>>>> 1c80d82... Criando um modulo da função blacklist
 
