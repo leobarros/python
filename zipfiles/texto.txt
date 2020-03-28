@@ -1,0 +1,2 @@
+Este é um arquivo de teste.
+Usaremos esse arquivo para o tutural de zip.
