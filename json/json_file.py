@@ -1,23 +1,28 @@
-import json
-# from urllib import request
+import urllib.request, json
 
-tv = '''
-{
-  "timestamp": 1584328521931,
-  "postInstallChecksum": [],
-  "manufacturer": "Smart tv",
-  "model": "Ue3",
-  "os": "Linux",
-  "version": "1.2.34",
-  "format": "zip",
-  "mode": "app_only",
-  "appname": "app_name",
-  "filename": "app_name.zip",
-  "checksum": "108d9998f67697fdfeeed9236b6401736",
-  "url": "http://example.com/app_name.zip"
-}
-'''
+def read(url):
+    with urllib.request.urlopen(url) as entrada:
+        data = json.loads(entrada.read().decode())
+        print(data.get('manufacturer') + ': ' + '(' + data.get('model') + ': ' + data.get('version') + ')')
 
-data = json.loads(tv)
+        
+if __name__ == '__main__':
 
-print('%s: %s' % (data['manufacturer'], data['version']))
+    def sony():
+        read('http://tv.globoplay.com.br/native/Sony/Unicorn-2019/' +
+             'apps/globoplay/versiondata.json')
+    
+    def iora():
+        read('http://tv.globoplay.com.br/native/Panasonic/Iora-2019/apps/globoplay/versiondata.json')
+    
+    def iris():
+        read('http://tv.globoplay.com.br/native/Panasonic/Iris-2019/apps/globoplay/versiondata.json')
+    
+    def tcl():
+        read('http://tv.globoplay.com.br/native/TCL/S4900/apps/globoplay/versiondata.json')
+
+
+iora()
+iris()
+tcl()
+sony()
