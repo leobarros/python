@@ -8,7 +8,7 @@ def index():
     html = ['<ul>']
     for username, user in db.users.items():
         html.append(
-            f"<li><a href='{ulr_for('user',username=username)}'>{user['name']}</a></li>"
+            f"<li><a href='{url_for('user',username=username)}'>{user['name']}</a></li>"
         )
         html.append('</ul>')
         return '\n'.join(html)
